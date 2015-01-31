@@ -8,7 +8,7 @@ namespace Babel
 {
     public class Activity
     {
-        public string ActivityId { get; set; }
+        public int ActivityId { get; set; }
         public string ActivityTitle { get; set; }
         public DateTime ActivityTime { get; set; }
         public int Capacity {get; set;}
