@@ -8,6 +8,11 @@ namespace Babel
 {
     public class Activity
     {
+        public Activity() { }
+        public Activity(string title)
+        {
+            this.ActivityTitle = title;
+        }
         public string ActivityId { get; set; }
         public string ActivityTitle { get; set; }
         public DateTime ActivityTime { get; set; }

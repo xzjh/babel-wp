@@ -59,6 +59,11 @@ namespace Babel
         //            MessageBox.Show(response.ToString());
         //        });
         //    });
+            Activities acts = new Activities();
+            acts.ActivitiesList.Add(new Activity("test 1 iasdh'yuasdsaihsad"));
+            acts.ActivitiesList.Add(new Activity("test 2 kajkdsaudjsa"));
+            acts.ActivitiesList.Add(new Activity("test 3 kajkdsaudjsa"));
+            lbNearbyActivities.ItemsSource = acts.ActivitiesList;
         }
     }
 }

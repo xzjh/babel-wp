@@ -11,6 +11,10 @@ namespace Babel
 {
     class Activities
     {
+        public Activities()
+        {
+            this.ActivitiesList = new ObservableCollection<Activity>();
+        }
         public ObservableCollection<Activity> ActivitiesList { get; set; }
     }
 }
