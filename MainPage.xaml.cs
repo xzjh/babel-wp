@@ -64,6 +64,22 @@ namespace Babel
             acts.ActivitiesList.Add(new Activity("test 2 kajkdsaudjsa"));
             acts.ActivitiesList.Add(new Activity("test 3 kajkdsaudjsa"));
             lbNearbyActivities.ItemsSource = acts.ActivitiesList;
+
+            //user = new User();
+            //user.UserName = "Zheng Li";
+            //user.UserIntroduction = "I'm Zheng Li, the most handsome guy in the world.";
+            //user.UserFacebookUrl = "https://www.facebook.com/sweeney1130?fref=ts";
+            //user.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg";
+            //user.UserDescription = "The god of ACM. The god of USC. The god of Viterbi. The god of the world.";
+            //string 
+        }
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/MessagePage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnPreference_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PreferencesPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

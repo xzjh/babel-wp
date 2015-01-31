@@ -14,6 +14,65 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
 
+    <phone:PhoneApplicationPage.Resources>
+    <Style x:Key="ButtonPreferences" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <StackPanel x:Name="stackpanel" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Orientation="Horizontal" >
+                        <StackPanel.Projection>
+                            <PlaneProjection/>
+                        </StackPanel.Projection>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="2" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetX)" Storyboard.TargetName="stackpanel" d:IsOptimized="True"/>
+                                            <DoubleAnimation Duration="0" To="2" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetY)" Storyboard.TargetName="stackpanel" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" Margin="8,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="32"/>
+    </Style>
+    <Style x:Key="ButtonMessage" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <StackPanel x:Name="stackpanel" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Orientation="Horizontal" >
+                        <StackPanel.Projection>
+                            <PlaneProjection/>
+                        </StackPanel.Projection>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled"/>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="2" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetX)" Storyboard.TargetName="stackpanel" d:IsOptimized="True"/>
+                                            <DoubleAnimation Duration="0" To="2" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetY)" Storyboard.TargetName="stackpanel" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" Margin="8,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="32"/>
+    </Style>
+    </phone:PhoneApplicationPage.Resources>
+
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 
@@ -42,20 +101,27 @@
 				<ImageBrush ImageSource="/Babel;component/Assets/PanoramaBackground.png"/>
 			</phone:Panorama.Background>
 
-			<!--Panorama item one-->
-			<phone:PanoramaItem Header="">
-				<!--Single line list with text wrapping-->
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="120"/>
-						<RowDefinition Height="*"/>
-					</Grid.RowDefinitions>
-					<StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Orientation="Horizontal">
-						<Image x:Name="imgUserIcon" HorizontalAlignment="Left" Height="100" Margin="10,0,-10,0" VerticalAlignment="Top" Width="100"/>
-						<TextBlock HorizontalAlignment="Left" Margin="30,0,0,0" TextWrapping="Wrap" Text="[UserName]" VerticalAlignment="Center"/>
-					</StackPanel>
-				</Grid>
-			</phone:PanoramaItem>
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="">
+                <!--Single line list with text wrapping-->
+                <Grid Margin="-5, 0, 0, 0">
+                	<Grid.RowDefinitions>
+                		<RowDefinition Height="320"/>
+                		<RowDefinition Height="110"/>
+                        <RowDefinition Height="120"/>
+                	</Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Row="0">
+                        <Image Margin="-30, 0, 0, 0" Width="300" Height="200" Source="https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg"></Image>
+                        <TextBlock Text="Welcome, Zheng Li" FontSize="33" Margin="50, 30, 0, 0"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <Button x:Name="btnMessages" Margin="40, 0, 0, 0" FontSize="50" Content="· Message" Style="{StaticResource ButtonMessage}" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnMessages_Click" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <Button x:Name="btnPreferences" Margin="40, 0, 0, 0" FontSize="50" Content="· Edit profile" Style="{StaticResource ButtonMessage}" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnPreference_Click" />
+                    </StackPanel>
+            	</Grid>
+            </phone:PanoramaItem>
 
 			<!--Panorama item two-->
 			<phone:PanoramaItem Header="Nearby">

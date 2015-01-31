@@ -14,5 +14,6 @@ namespace Babel
         public string UserId { get; set; }
         public string UserIntroduction { get; set; }
         public string UserDescription { get; set; }
+        public string Password { get; set; }
     }
 }
