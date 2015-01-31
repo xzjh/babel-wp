@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Babel
 {
-    class Activity
+    public class Activity
     {
         public string ActivityId { get; set; }
         public string ActivityTitle { get; set; }
@@ -18,5 +18,6 @@ namespace Babel
         public string LocationDetail { get; set; }
         public string Destination { get; set; }
         public string Description { get; set; }
+        public string Owner { get; set; }
     }
 }
