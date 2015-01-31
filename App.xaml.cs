@@ -20,6 +20,11 @@ namespace Babel
         public static User user4 { get; set; }
         public static User user5 { get; set; }
         public static User user6 { get; set; }
+        public static Activity ac1 { get; set; }
+        public static Activity ac2 { get; set; }
+        public static Activity ac3 { get; set; }
+        public static Activity ac4 { get; set; }
+
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -36,8 +41,71 @@ namespace Babel
             user1.UserName = "Zheng Li";
             user1.UserFacebookUrl = "https://www.facebook.com/sweeney1130?fref=ts";
             user1.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg";
-            user1.UserIntroduction = "I'm Zheng Li, the most handsome guy in the world.";
-            user1.UserDescription = "The god of ACM. The god of Python. The god of algorithm. The god of USC Viterbi.";
+            user1.UserIntroduction = "";
+            user1.UserDescription = "";
+
+            user2 = new User();
+            user2.UserName = "Long Chen";
+            user2.UserFacebookUrl = "https://www.facebook.com/profile.php?id=1338028443&fref=ts";
+            user2.UserIconUrl = "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/1512257_10201665689747529_1243148821_o.jpg";
+            user2.UserIntroduction = "";
+            user2.UserDescription = "";
+       
+            user3 = new User();
+            user3.UserName = "Zihan Tong";
+            user3.UserFacebookUrl = "https://www.facebook.com/zihan.tong";
+            user3.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-xfa1/t31.0-8/10626320_1463790837240602_3198076887803322097_o.jpg";
+            user3.UserIntroduction = "";
+            user3.UserDescription = "";
+
+            user4 = new User();
+            user4.UserName = "Jiaheng Zhang";
+            user4.UserFacebookUrl = "https://www.facebook.com/ixzjh?fref=ts";
+            user4.UserIconUrl = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p320x320/10802010_10205596495731196_4446485967057294571_n.jpg?oh=94041e2921aaf06ede8b9ceaf056083b&oe=556DB1C9&__gda__=1433184850_f239d6b37f7ad6ae0a7d078fbd5e2ab8";
+            user4.UserIntroduction = "";
+            user4.UserDescription = "";
+
+            user5 = new User();
+            user5.UserName = "Yemin Shi";
+            user5.UserFacebookUrl = "https://www.facebook.com/profile.php?id=100002144257426&fref=tl_fr_box&pnref=lhc.friends";
+            user5.UserIconUrl = "https://scontent-b-lax.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10329817_724203640994438_1635170653487382459_o.jpg";
+            user5.UserIntroduction = "";
+            user5.UserDescription = "";
+
+            user5 = new User();
+            user5.UserName = "Yemin Shi";
+            user5.UserFacebookUrl = "https://www.facebook.com/profile.php?id=100002144257426&fref=tl_fr_box&pnref=lhc.friends";
+            user5.UserIconUrl = "https://scontent-b-lax.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10329817_724203640994438_1635170653487382459_o.jpg";
+            user5.UserIntroduction = "";
+            user5.UserDescription = "";
+
+            user6 = new User();
+            user6.UserName = "Liao Ni";
+            user6.UserFacebookUrl = "https://www.facebook.com/photo.php?fbid=104777323005860&set=a.104777319672527.12431.100004207781291&type=1&theater";
+            user6.UserIconUrl = "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/552122_104777323005860_1750628002_n.jpg?oh=bd8acc69b5f1c44de0a27cc96a753e67&oe=554FB5CB&__gda__=1431354946_26b77c45ee1e16e230fdd82fbb4d5096";
+            user6.UserIntroduction = "";
+            user6.UserDescription = "";
+
+            ac1 = new Activity();
+            ac1.ActivityTitle = "Go to 99 Ranch";
+            ac1.Available = 4;
+            ac1.Budget = 5;
+            ac1.LocationDetail = "USC Gate 6";
+            ac1.Owner = "Zheng Li";
+            ac1.Destination = "99 Ranch";
+            ac1.ActivityTime = Convert.ToDateTime("02/15/2015 10:30:00 AM");
+            ac1.Description = "Go shopping to 99 Ranch."
+
+            ac2 = new Activity();
+            ac2.ActivityTitle = "Go to see film at Regal";
+            ac2.Available = 2;
+            ac2.Budget = 1;
+            ac2.LocationDetail = "USC Gate 4";
+            ac2.Owner = "Long Chen";
+            ac2.Destination = "Regal";
+            ac2.ActivityTime = Convert.ToDateTime("02/19/2015 07:30:00 PM");
+            ac2.Description = "See film at Regal. Here are two boys, and we want to invite two girls."
+
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
