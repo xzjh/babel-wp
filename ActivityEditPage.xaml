@@ -44,7 +44,7 @@
                     <RowDefinition Height="0.08*"/>
                     <RowDefinition Height="0.32*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Portable User Interface"/>
                 <TextBox x:Name="txtTitle" Grid.Column="1" Margin="-4,-4,-4,-8" TextWrapping="Wrap" Grid.ColumnSpan="2" FontSize="24"/>
                 <TextBlock Margin="8" TextWrapping="Wrap" Text="Start Time" FontSize="24" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <toolkit:DatePicker x:Name="dpStartTime" Grid.Column="1" Margin="-4" Grid.Row="1"/>
@@ -59,7 +59,7 @@
                     <ListBoxItem Content="0-10"/>
                     <ListBoxItem Content="10-20"/>
                     <ListBoxItem Content="20-50"/>
-                    <ListBoxItem Content="over 50"/>
+                    <ListBoxItem Content="Over 50"/>
                     <ListBoxItem Content="Unknown"/>
                 </toolkit:ListPicker>
                 <TextBlock Margin="8" TextWrapping="Wrap" Text="Car Available Seats" FontSize="24" Grid.Row="5" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Portable User Interface"/>
