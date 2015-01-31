@@ -59,7 +59,7 @@
                 <TextBlock x:Name="txbDestination" Margin="2" TextWrapping="Wrap" Text="[Destination]" FontSize="24" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock Margin="2" Grid.Row="3" TextWrapping="Wrap" Text="Available Seats" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <TextBlock x:Name="txbAvailableSeats" Margin="2" TextWrapping="Wrap" Text="[AvailableSeats]" FontSize="24" Grid.Column="1" Grid.Row="3"/>
-                <TextBlock Margin="2" Grid.Row="4" TextWrapping="Wrap" Text="Approx. Budget" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
+                <TextBlock Margin="2" Grid.Row="4" TextWrapping="Wrap" Text="Approx. Budget" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}" FontFamily="Portable User Interface"/>
                 <TextBlock x:Name="txbBudget" Margin="2" TextWrapping="Wrap" Text="[ApproxBudget]" FontSize="24" Grid.Column="1" Grid.Row="4" FontFamily="Portable User Interface"/>
                 <TextBlock Margin="2" Grid.Row="5" TextWrapping="Wrap" Text="Participants" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <TextBlock x:Name="txbDescription" Grid.ColumnSpan="2" Margin="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Content}"/>

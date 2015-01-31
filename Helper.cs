@@ -8,15 +8,32 @@ using System.Windows;
 
 namespace Babel
 {
-    public delegate void AsyncPostCallback(string responseString);
+    public delegate void AsyncPostCallback(HttpWebResponse response);
+    //public class MyHttpResponse
+    //{
+    //    public string responseString;
+    //    public WebHeaderCollection headers;
+    //}
     public static class Helper
     {
+
+        public static string GetResponseString(HttpWebResponse response)
+        {
+            Stream streamResponse = response.GetResponseStream();
+            StreamReader reader = new StreamReader(streamResponse);
+            string responseString = reader.ReadToEnd();
+            streamResponse.Close();
+            reader.Close();
+            response.Close();
+            return responseString;
+        }
 
         public static void PostRequest(string requestUri, string parameters, AsyncPostCallback callback)
         {
             HttpWebRequest spAuthReq = HttpWebRequest.Create(requestUri) as HttpWebRequest;
             spAuthReq.ContentType = "application/x-www-form-urlencoded";
             spAuthReq.Method = "POST";
+            spAuthReq.CookieContainer = new CookieContainer();
             spAuthReq.BeginGetRequestStream(new AsyncCallback((callbackResult) =>
             {
                 HttpWebRequest myRequest = (HttpWebRequest)callbackResult.AsyncState;
@@ -30,14 +47,7 @@ namespace Babel
                     {
                         HttpWebRequest request = (HttpWebRequest)callbackResult2.AsyncState;
                         HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(callbackResult2);
-                        string responseString = "";
-                        Stream streamResponse = response.GetResponseStream();
-                        StreamReader reader = new StreamReader(streamResponse);
-                        responseString = reader.ReadToEnd();
-                        streamResponse.Close();
-                        reader.Close();
-                        response.Close();
-                        callback(responseString);
+                        callback(response);
                     }
                     catch (Exception e)
                     {
@@ -47,24 +57,17 @@ namespace Babel
             }), spAuthReq);
         }
 
-        private void GetRequest(string requestUri, AsyncPostCallback callback)
+        public static void GetRequest(string requestUri, AsyncPostCallback callback)
         {
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(requestUri);
-            request.ContentType = "application/x-www-form-urlencoded";
+            request.CookieContainer = new CookieContainer();
             request.BeginGetResponse(new AsyncCallback((callbackResult) =>
             {
                 try
                 {
                     HttpWebRequest request2 = (HttpWebRequest)callbackResult.AsyncState;
                     HttpWebResponse response = (HttpWebResponse)request2.EndGetResponse(callbackResult);
-                    string responseString = "";
-                    Stream streamResponse = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(streamResponse);
-                    responseString = reader.ReadToEnd();
-                    streamResponse.Close();
-                    reader.Close();
-                    response.Close();
-                    callback(responseString);
+                    callback(response);
                 }
                 catch (Exception e)
                 {

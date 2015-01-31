@@ -29,5 +29,27 @@ namespace Babel
             //    App.ViewModel.LoadData();
             //}
         }
+
+        private void PhoneApplicationPage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MessageBox.Show("hello");
+            Helper.PostRequest("http://192.168.1.88/login", "username=adams", (response) =>
+            {
+                System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(response.Cookies.ToString());
+                    foreach (Cookie cook in response.Cookies) {
+                        MessageBox.Show(cook.Value);
+                    }
+                });
+            });
+            Helper.PostRequest("http://192.168.1.88/view_user", "username=adams", (response) =>
+            {
+                System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(response.ToString());
+                });
+            });
+        }
     }
 }
