@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Key="ActivitiesListTemplate">
+        <DataTemplate x:Key="MessagesListTemplate">
             <HyperlinkButton NavigateUri="{Binding}"  MinHeight="100" Padding="2" FontFamily="Portable User Interface" >
                 <HyperlinkButton.Template>
                     <ControlTemplate>
@@ -44,6 +44,7 @@
 
 
 <!--LayoutRoot is the root grid where all page content is placed-->
+    <ScrollViewer>
         <Grid x:Name="LayoutRoot" Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -58,8 +59,9 @@
             <!--ContentPanel - place additional content here-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                 <ListBox x:Name="MessageList" Margin="10, 10, 10, 10">
-                    <ListBox Margin="0,0,-12,0" ItemsSource="{Binding}" DataContext="{Binding}" x:Name="lbActivitiesSearch" ItemTemplate="{StaticResource ActivitiesListTemplate}" />
+                    <ListBox Margin="0,0,-12,0" ItemsSource="{Binding}" DataContext="{Binding}" x:Name="lbActivitiesSearch" ItemTemplate="{StaticResource MessagesListTemplate}" />
                 </ListBox>
             </Grid>
         </Grid>
+    </ScrollViewer>
     </phone:PhoneApplicationPage>
