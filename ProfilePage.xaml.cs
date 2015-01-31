@@ -19,7 +19,7 @@ namespace Babel
         }
         private void LoadUser(object sender, RoutedEventArgs e)
         {
-            thisItem = App.user;
+            thisItem = App.user1;
             LayoutRoot.DataContext = thisItem;
         }
     }

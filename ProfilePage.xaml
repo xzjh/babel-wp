@@ -31,8 +31,7 @@
                     <RowDefinition Height="320"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image x:Name="imgUserIcon" Grid.Row="0" Margin="10" Source="{Binding UserIconUrl}">
-                </Image>
+                <Image x:Name="imgUserIcon" Grid.Row="0" Margin="10" Source="{Binding UserIconUrl}" />
                 <StackPanel Grid.Row="1" Margin="2" Orientation="Vertical">
                     <TextBlock x:Name="txbStatus" Margin="10, 0, 10, 0" Text="Status:" FontSize="30"></TextBlock>
                     <TextBlock x:Name="txbUserIntroduction" Margin="10, 5, 10, 0" Text="{Binding UserIntroduction}" FontSize="30" TextWrapping="Wrap"></TextBlock>

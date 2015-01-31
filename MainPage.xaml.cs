@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Data;
 
 namespace Babel
 {
@@ -61,8 +62,9 @@ namespace Babel
         //    });
             Activities acts = new Activities();
             acts.ActivitiesList.Add(new Activity("test 1 iasdh'yuasdsaihsad"));
-            acts.ActivitiesList.Add(new Activity("test 2 kajkdsaudjsa"));
-            acts.ActivitiesList.Add(new Activity("test 3 kajkdsaudjsa"));
+            //acts.ActivitiesList.Add(new Activity("test 2 kajkdsaudjsa"));
+            //acts.ActivitiesList.Add(new Activity("test 3 kajkdsaudjsa"));
+            acts.ActivitiesList[0].ActivityId = "0";
             lbNearbyActivities.ItemsSource = acts.ActivitiesList;
 
             //user = new User();
@@ -80,6 +82,33 @@ namespace Babel
         private void btnPreference_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/PreferencesPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void lbNearbyActivities_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+    }
+
+    /// <summary>
+    /// Activity.ID转化为DetaiPage页面Uri的Converter
+    /// </summary>
+    public class ActivityIdToDetailUri : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if ((Int32)value == -1)     //没有项
+            {
+                return null;
+            }
+            return "/ActivityViewPage.xaml?index=" + value.ToString();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Babel
         }
         private void LoadPreferences(object sender, RoutedEventArgs e)
         {
-            thisItem = App.user;
+            thisItem = App.user1;
             LayoutRoot.DataContext = thisItem;
         }
         private void mnuCancel_Click(object sender, EventArgs e)
@@ -28,9 +28,9 @@ namespace Babel
         }
         private void mnuOk_Click(object sender, EventArgs e)
         {
-            App.user.UserDescription = txbUserDescription.Text;
-            App.user.UserIntroduction = txbUserIntroduction.Text;
-            App.user.UserName = txbUserName.Text;
+            App.user1.UserDescription = txbUserDescription.Text;
+            App.user1.UserIntroduction = txbUserIntroduction.Text;
+            App.user1.UserName = txbUserName.Text;
             //这里要把信息提交上去
             //可以做一个图像上传
             //判断是否成功
