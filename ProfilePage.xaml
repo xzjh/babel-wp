@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Babel.Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <ScrollViewer>
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel Grid.Row="0" Margin="10,17,0,28">
+                <TextBlock x:Name="txbUserName" Text="Zheng Li" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            </StackPanel>
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="320"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="imgUserIcon" Grid.Row="0" Margin="10" Source="https://scontent-a-sea.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg">
+                </Image>
+                <StackPanel Grid.Row="1" Margin="2" Orientation="Vertical">
+                    <TextBlock x:Name="txbStatus" Margin="10, 0, 10, 0" Text="Status:" FontSize="30"></TextBlock>
+                    <TextBlock x:Name="txbUserIntroduction" Margin="10, 5, 10, 0" Text="I am a super genius in USC! So come to have sex with me!" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock x:Name="txbDescription" Margin="10, 10, 10, 0" Text="Description:" FontSize="30"></TextBlock>
+                    <TextBlock x:Name="txbUserDescription" Margin="10, 5, 10, 0" Text="God of Acm. God of Computer Science. God of Web development.jdjjdjdjddjdjjdjddjdjjdjjjdjjjdjdjdjdjdjdjdjdjdjj" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <HyperlinkButton x:Name="txbFacebookLink" Margin="10, 5, 10, 0" NavigateUri="https://www.facebook.com/sweeney1130?fref=ts" Content="Fackbook Link" FontSize="30"></HyperlinkButton>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+
+</phone:PhoneApplicationPage>
