@@ -30,7 +30,9 @@ namespace Babel
         {
             App.user.UserDescription = txbUserDescription.Text;
             App.user.UserIntroduction = txbUserIntroduction.Text;
+            App.user.UserName = txbUserName.Text;
             //这里要把信息提交上去
+            //可以做一个图像上传
             //判断是否成功
             NavigationService.GoBack();
         }

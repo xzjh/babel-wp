@@ -39,8 +39,8 @@
                 <RowDefinition Height="0.4*"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Image Source="{Binding UserIcomUrl}" ></Image>
-                <TextBlock x:Name="txbUserName" FontSize="40" Text="{Binding UserName}"></TextBlock>
+                <Image Source="{Binding UserIconUrl}" ></Image>
+                <TextBox x:Name="txbUserName" FontSize="40" Text="{Binding UserName}"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="Status" FontSize="30" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>

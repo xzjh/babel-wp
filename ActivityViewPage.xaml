@@ -12,7 +12,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="LoadActivity">
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
         	<shell:ApplicationBarIconButton x:Name="mnuApply" IconUri="/Assets/AppBar/like.png" Text="apply"/>
@@ -30,7 +30,7 @@
             <!--TitlePanel contains the name of the application and page title-->
             <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <TextBlock x:Name="PageTitle" Text="[Title]" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="64"/>
+                    <TextBlock x:Name="PageTitle" Text="{Binding ActivityTitle}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="64"/>
                 </ScrollViewer>
             </StackPanel>
 
@@ -52,17 +52,17 @@
                     <ColumnDefinition Width="6*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Margin="2" TextWrapping="Wrap" Text="Start Time" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
-                <TextBlock x:Name="txbStartTime" Margin="2" TextWrapping="Wrap" Text="[StartTime]" FontSize="24" Grid.Column="1"/>
+                <TextBlock x:Name="txbStartTime" Margin="2" TextWrapping="Wrap" Text="{Binding ActivityTime}" FontSize="24" Grid.Column="1"/>
                 <TextBlock Margin="2" Grid.Row="1" TextWrapping="Wrap" Text="Location" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
-                <TextBlock x:Name="txbLocation" Margin="2" TextWrapping="Wrap" Text="[Location]" FontSize="24" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock x:Name="txbLocation" Margin="2" TextWrapping="Wrap" Text="{Binding LocationDetail}" FontSize="24" Grid.Column="1" Grid.Row="1"/>
                 <TextBlock Margin="2" Grid.Row="2" TextWrapping="Wrap" Text="Destination" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
-                <TextBlock x:Name="txbDestination" Margin="2" TextWrapping="Wrap" Text="[Destination]" FontSize="24" Grid.Column="1" Grid.Row="2"/>
+                <TextBlock x:Name="txbDestination" Margin="2" TextWrapping="Wrap" Text="{Binding Destination}" FontSize="24" Grid.Column="1" Grid.Row="2"/>
                 <TextBlock Margin="2" Grid.Row="3" TextWrapping="Wrap" Text="Available Seats" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
-                <TextBlock x:Name="txbAvailableSeats" Margin="2" TextWrapping="Wrap" Text="[AvailableSeats]" FontSize="24" Grid.Column="1" Grid.Row="3"/>
+                <TextBlock x:Name="txbAvailableSeats" Margin="2" TextWrapping="Wrap" Text="{Binding Available}" FontSize="24" Grid.Column="1" Grid.Row="3"/>
                 <TextBlock Margin="2" Grid.Row="4" TextWrapping="Wrap" Text="Approx. Budget" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}" FontFamily="Portable User Interface"/>
-                <TextBlock x:Name="txbBudget" Margin="2" TextWrapping="Wrap" Text="[ApproxBudget]" FontSize="24" Grid.Column="1" Grid.Row="4" FontFamily="Portable User Interface"/>
+                <TextBlock x:Name="txbBudget" Margin="2" TextWrapping="Wrap" Text="{Binding Budget}" FontSize="24" Grid.Column="1" Grid.Row="4" FontFamily="Portable User Interface"/>
                 <TextBlock Margin="2" Grid.Row="5" TextWrapping="Wrap" Text="Participants" FontSize="24" Foreground="{StaticResource PhoneAccentBrush}"/>
-                <TextBlock x:Name="txbDescription" Grid.ColumnSpan="2" Margin="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Content}"/>
+                <TextBlock x:Name="txbDescription" Grid.ColumnSpan="2" Margin="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Description}"/>
                 <TextBlock Margin="2" Grid.Row="7" TextWrapping="Wrap" Text="Activity Description" FontSize="24" Grid.ColumnSpan="2" Foreground="{StaticResource PhoneAccentBrush}" FontFamily="Portable User Interface"/>
                 <phone:LongListSelector Height="120" Margin="0" Grid.RowSpan="1" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center" FontFamily="Portable User Interface" ItemsSource="{Binding Items}">
 					
