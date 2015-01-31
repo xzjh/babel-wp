@@ -30,7 +30,7 @@
 
             <!--TitlePanel 包含应用程序的名称和页标题-->
             <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
-                <TextBlock Text="[ActivityName]" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <TextBlock Text="Edit Activity" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             </StackPanel>
 
             <!--ContentPanel - 在此处放置其他内容-->
@@ -50,16 +50,16 @@
                     <RowDefinition Height="0.08*"/>
                     <RowDefinition Height="0.32*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Portable User Interface"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Title" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Portable User Interface" Foreground="#FFE51400"/>
                 <TextBox x:Name="txtTitle" Grid.Column="1" Margin="-4,-4,-4,-8" TextWrapping="Wrap" Grid.ColumnSpan="2" FontSize="24"/>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Start Time" FontSize="24" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Start Time" FontSize="24" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <toolkit:DatePicker x:Name="dpStartTime" Grid.Column="1" Margin="-4" Grid.Row="1"/>
                 <toolkit:TimePicker x:Name="tpStartTime" Grid.Column="2" Margin="-4" Grid.Row="1"/>
                 <TextBox x:Name="txtLocation" Grid.Column="1" Margin="-4,-4,-4,-8" TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2" FontSize="24"/>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Location" FontSize="24" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Destination" FontSize="24" Grid.Row="3" HorizontalAlignment="Center" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Location" FontSize="24" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Destination" FontSize="24" Grid.Row="3" HorizontalAlignment="Center" d:LayoutOverrides="Height" VerticalAlignment="Center" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <TextBox x:Name="txtDestination" Grid.Column="1" Margin="-4,-4,-4,-8" TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="2" FontSize="24"/>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Approximate Budget" FontSize="24" Grid.Row="4" HorizontalAlignment="Center" d:LayoutOverrides="Height" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.ColumnSpan="2"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Approximate Budget" FontSize="24" Grid.Row="4" HorizontalAlignment="Center" d:LayoutOverrides="Height" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.ColumnSpan="2" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <toolkit:ListPicker Grid.Column="2" Margin="8,0,8,8" Grid.Row="4" Name="lpBudget" FullModeHeader="Budget" FontFamily="Portable User Interface">
                     <ListBoxItem Content="Free"/>
                     <ListBoxItem Content="0-10"/>
@@ -68,7 +68,7 @@
                     <ListBoxItem Content="Over 50"/>
                     <ListBoxItem Content="Unknown"/>
                 </toolkit:ListPicker>
-                <TextBlock Margin="8" TextWrapping="Wrap" Text="Car Available Seats" FontSize="24" Grid.Row="5" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Portable User Interface"/>
+                <TextBlock Margin="8" TextWrapping="Wrap" Text="Car Available Seats" FontSize="24" Grid.Row="5" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontFamily="Portable User Interface" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <toolkit:ListPicker Grid.Column="2" Margin="8,0,8,8" Grid.Row="5" Name="lpType" FullModeHeader="Car Available Seats" FontFamily="Portable User Interface">
                     <ListBoxItem Content="1"/>
                     <ListBoxItem Content="2"/>
@@ -80,7 +80,7 @@
                     <ListBoxItem Content="8"/>
                     <ListBoxItem Content="9"/>
                 </toolkit:ListPicker>
-                <TextBlock Grid.ColumnSpan="3" Margin="8" Grid.Row="6" TextWrapping="Wrap" Text="Description" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
+                <TextBlock Grid.ColumnSpan="3" Margin="8" Grid.Row="6" TextWrapping="Wrap" Text="Description" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Portable User Interface" Foreground="{StaticResource PhoneAccentBrush}"/>
                 <TextBox x:Name="txtDescription" Grid.ColumnSpan="3" Margin="-4,-4,-4,4" Grid.Row="7" TextWrapping="Wrap" FontFamily="Portable User Interface"/>
 
             </Grid>
