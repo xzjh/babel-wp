@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Babel
 {
-    class User
+    public class User
     {
         public string UserName { get; set; }
         public string UserIconUrl { get; set; }

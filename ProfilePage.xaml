@@ -11,11 +11,11 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="LoadUser">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <ScrollViewer>
-        <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -23,7 +23,7 @@
 
             <!--TitlePanel contains the name of the application and page title-->
             <StackPanel Grid.Row="0" Margin="10,17,0,28">
-                <TextBlock x:Name="txbUserName" Text="Zheng Li" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <TextBlock x:Name="txbUserName" Text="{Binding UserName}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             </StackPanel>
             <!--ContentPanel - place additional content here-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,10,0">
@@ -31,14 +31,14 @@
                     <RowDefinition Height="320"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image x:Name="imgUserIcon" Grid.Row="0" Margin="10" Source="https://scontent-a-sea.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg">
+                <Image x:Name="imgUserIcon" Grid.Row="0" Margin="10" Source="{Binding UserIconUrl}">
                 </Image>
                 <StackPanel Grid.Row="1" Margin="2" Orientation="Vertical">
                     <TextBlock x:Name="txbStatus" Margin="10, 0, 10, 0" Text="Status:" FontSize="30"></TextBlock>
-                    <TextBlock x:Name="txbUserIntroduction" Margin="10, 5, 10, 0" Text="I am a super genius in USC! So come to have sex with me!" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock x:Name="txbUserIntroduction" Margin="10, 5, 10, 0" Text="{Binding UserIntroduction}" FontSize="30" TextWrapping="Wrap"></TextBlock>
                     <TextBlock x:Name="txbDescription" Margin="10, 10, 10, 0" Text="Description:" FontSize="30"></TextBlock>
-                    <TextBlock x:Name="txbUserDescription" Margin="10, 5, 10, 0" Text="God of Acm. God of Computer Science. God of Web development.jdjjdjdjddjdjjdjddjdjjdjjjdjjjdjdjdjdjdjdjdjdjdjj" FontSize="30" TextWrapping="Wrap"></TextBlock>
-                    <HyperlinkButton x:Name="txbFacebookLink" Margin="10, 5, 10, 0" NavigateUri="https://www.facebook.com/sweeney1130?fref=ts" Content="Fackbook Link" FontSize="30"></HyperlinkButton>
+                    <TextBlock x:Name="txbUserDescription" Margin="10, 5, 10, 0" Text="{Binding UserDescription}" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <HyperlinkButton x:Name="txbFacebookLink" Margin="10, 5, 10, 0" NavigateUri="{Binding UserFacebookUrl}" Content="Fackbook Link" FontSize="30"></HyperlinkButton>
                 </StackPanel>
             </Grid>
         </Grid>

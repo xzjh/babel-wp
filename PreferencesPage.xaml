@@ -11,16 +11,16 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="LoadPreferences">
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton x:Name="mnuCancel" IconUri="/Assets/AppBar/cancel.png" Text="Cancel"/>
-            <shell:ApplicationBarIconButton x:Name="mnuOK" IconUri="/Assets/AppBar/check.png" Text="ok"/>
+            <shell:ApplicationBarIconButton x:Name="mnuCancel" IconUri="/Assets/AppBar/cancel.png" Text="Cancel" Click="mnuCancel_Click"/>
+            <shell:ApplicationBarIconButton x:Name="mnuOK" IconUri="/Assets/AppBar/check.png" Text="ok" Click="mnuOk_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -39,16 +39,16 @@
                 <RowDefinition Height="0.4*"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Image Source="https://scontent-a-sea.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg" ></Image>
-                <TextBox FontSize="40" Text="Zheng Li"></TextBox>
+                <Image Source="{Binding UserIconUrl}" ></Image>
+                <TextBox x:Name="txbUserName" FontSize="40" Text="{Binding UserName}"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <TextBlock Text="Status" FontSize="30" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
-                <TextBox Margin="0, 0, 0, 5" Text="I am a super genius in USC! So come to have sex with me!" FontSize="20" TextWrapping="Wrap"></TextBox>
+                <TextBox x:Name="txbUserIntroduction" Margin="0, 0, 0, 5" Text="{Binding UserIntroduction}" FontSize="20" TextWrapping="Wrap"></TextBox>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Vertical">
                 <TextBlock Text="Description" FontSize="30" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
-                <TextBox Margin="0, 0, 0, 5" Text="God of Acm. God of Computer Science. God of Web development." FontSize="20" TextWrapping="Wrap"></TextBox>
+                <TextBox x:Name="txbUserDescription" Margin="0, 0, 0, 5" Text="{Binding UserDescription}" FontSize="20" TextWrapping="Wrap"></TextBox>
             </StackPanel>
         </Grid>
         

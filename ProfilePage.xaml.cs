@@ -12,9 +12,15 @@ namespace Babel
 {
     public partial class Profile : PhoneApplicationPage
     {
+        User thisItem;
         public Profile()
         {
             InitializeComponent();
+        }
+        private void LoadUser(object sender, RoutedEventArgs e)
+        {
+            thisItem = App.user;
+            LayoutRoot.DataContext = thisItem;
         }
     }
 }

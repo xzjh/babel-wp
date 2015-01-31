@@ -14,6 +14,7 @@ namespace Babel
 {
     public partial class App : Application
     {
+        public static User user { get; set; }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -26,6 +27,12 @@ namespace Babel
         /// </summary>
         public App()
         {
+            user = new User();
+            user.UserName = "Zheng Li";
+            user.UserFacebookUrl = "https://www.facebook.com/sweeney1130?fref=ts";
+            user.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg";
+            user.UserIntroduction = "I'm Zheng Li, the most handsome guy in the world.";
+            user.UserDescription = "The god of ACM. The god of Python. The god of algorithm. The god of USC Viterbi.";
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
