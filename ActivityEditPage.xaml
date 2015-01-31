@@ -13,6 +13,12 @@
     mc:Ignorable="d"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton x:Name="mnuCancel" IconUri="/Assets/AppBar/cancel.png" Text="Cancel"/>
+			<shell:ApplicationBarIconButton x:Name="mnuOK" IconUri="/Assets/AppBar/check.png" Text="ok"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 
     <ScrollViewer Name="scrollViewer">
         <!--LayoutRoot 是包含所有页面内容的根网格-->
