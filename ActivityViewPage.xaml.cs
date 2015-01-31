@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace Babel
 {
-    public partial class ActivityEditPage : PhoneApplicationPage
+    public partial class ActivityViewPage : PhoneApplicationPage
     {
-        public ActivityEditPage()
+        public ActivityViewPage()
         {
             InitializeComponent();
         }
