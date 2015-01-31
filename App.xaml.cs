@@ -41,8 +41,8 @@ namespace Babel
             user1.UserName = "Zheng Li";
             user1.UserFacebookUrl = "https://www.facebook.com/sweeney1130?fref=ts";
             user1.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg";
-            user1.UserIntroduction = "";
-            user1.UserDescription = "";
+            user1.UserIntroduction = "Got great offer. Very happy these days.";
+            user1.UserDescription = "I am a master student in University of Southern California, major in computer science. I like to play tennis and badminton. I like to make friends with different kinds of people.";
 
             user2 = new User();
             user2.UserName = "Long Chen";
@@ -87,6 +87,7 @@ namespace Babel
             user6.UserDescription = "";
 
             ac1 = new Activity();
+            ac1.ActivityId = 0;
             ac1.ActivityTitle = "Go to 99 Ranch";
             ac1.Available = 4;
             ac1.Budget = 5;
@@ -97,6 +98,7 @@ namespace Babel
             ac1.Description = "Go shopping to 99 Ranch."
 
             ac2 = new Activity();
+            ac2.ActivityId = 1;
             ac2.ActivityTitle = "Go to see film at Regal";
             ac2.Available = 2;
             ac2.Budget = 1;
