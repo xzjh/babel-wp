@@ -61,11 +61,13 @@ namespace Babel
         //        });
         //    });
             Activities acts = new Activities();
-            acts.ActivitiesList.Add(new Activity("test 1 iasdh'yuasdsaihsad"));
-            //acts.ActivitiesList.Add(new Activity("test 2 kajkdsaudjsa"));
-            //acts.ActivitiesList.Add(new Activity("test 3 kajkdsaudjsa"));
-            acts.ActivitiesList[0].ActivityId = "0";
+            acts.ActivitiesList.Add(App.ac1);
+            acts.ActivitiesList.Add(App.ac2);
+            acts.ActivitiesList.Add(App.ac3);
+            acts.ActivitiesList.Add(App.ac4);
             lbNearbyActivities.ItemsSource = acts.ActivitiesList;
+            lbUserActivities.ItemsSource = acts.ActivitiesList;
+            App.acts = acts;
 
             //user = new User();
             //user.UserName = "Zheng Li";

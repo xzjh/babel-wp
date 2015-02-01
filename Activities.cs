@@ -9,7 +9,7 @@ using System.IO;
 using System.Windows;
 namespace Babel
 {
-    class Activities
+    public class Activities
     {
         public Activities()
         {

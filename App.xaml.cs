@@ -20,6 +20,11 @@ namespace Babel
         public static User user4 { get; set; }
         public static User user5 { get; set; }
         public static User user6 { get; set; }
+        public static Activity ac1 { get; set; }
+        public static Activity ac2 { get; set; }
+        public static Activity ac3 { get; set; }
+        public static Activity ac4 { get; set; }
+        public static Activities acts { get; set; }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -36,8 +41,88 @@ namespace Babel
             user1.UserName = "Zheng Li";
             user1.UserFacebookUrl = "https://www.facebook.com/sweeney1130?fref=ts";
             user1.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-prn2/t31.0-8/1077700_10200404863464677_701957100_o.jpg";
-            user1.UserIntroduction = "I'm Zheng Li, the most handsome guy in the world.";
-            user1.UserDescription = "The god of ACM. The god of Python. The god of algorithm. The god of USC Viterbi.";
+            user1.UserIntroduction = "Got a great offer. Very happy these days.";
+            user1.UserDescription = "I am a master student in University of Southern California, major in computer science. I like to play tennis and badminton. I like to make friends with different kinds of people.";
+
+            user2 = new User();
+            user2.UserName = "Long Chen";
+            user2.UserFacebookUrl = "https://www.facebook.com/profile.php?id=1338028443&fref=ts";
+            user2.UserIconUrl = "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/t31.0-8/1512257_10201665689747529_1243148821_o.jpg";
+            user2.UserIntroduction = "Looking for more fun of life";
+            user2.UserDescription = "The more you like yourself, the less you are like anyone else, which makes you unique";
+       
+            user3 = new User();
+            user3.UserName = "Zihan Tong";
+            user3.UserFacebookUrl = "https://www.facebook.com/zihan.tong";
+            user3.UserIconUrl = "https://scontent-a-lax.xx.fbcdn.net/hphotos-xfa1/t31.0-8/10626320_1463790837240602_3198076887803322097_o.jpg";
+            user3.UserIntroduction = "Looking for internship";
+            user3.UserDescription = "Do not go where the path may lead, go instead where there is no path and leave a trail";
+
+            user4 = new User();
+            user4.UserName = "Jiaheng Zhang";
+            user4.UserFacebookUrl = "https://www.facebook.com/ixzjh?fref=ts";
+            user4.UserIconUrl = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/p320x320/10802010_10205596495731196_4446485967057294571_n.jpg?oh=94041e2921aaf06ede8b9ceaf056083b&oe=556DB1C9&__gda__=1433184850_f239d6b37f7ad6ae0a7d078fbd5e2ab8";
+            user4.UserIntroduction = "So happy.";
+            user4.UserDescription = "For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone.";
+
+            user5 = new User();
+            user5.UserName = "Yemin Shi";
+            user5.UserFacebookUrl = "https://www.facebook.com/profile.php?id=100002144257426&fref=tl_fr_box&pnref=lhc.friends";
+            user5.UserIconUrl = "https://scontent-b-lax.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10329817_724203640994438_1635170653487382459_o.jpg";
+            user5.UserIntroduction = "Terrible.";
+            user5.UserDescription = "Do not go where the path may lead, go instead where there is no path and leave a trail";
+
+            user6 = new User();
+            user6.UserName = "Liao Ni";
+            user6.UserFacebookUrl = "https://www.facebook.com/photo.php?fbid=104777323005860&set=a.104777319672527.12431.100004207781291&type=1&theater";
+            user6.UserIconUrl = "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/552122_104777323005860_1750628002_n.jpg?oh=bd8acc69b5f1c44de0a27cc96a753e67&oe=554FB5CB&__gda__=1431354946_26b77c45ee1e16e230fdd82fbb4d5096";
+            user6.UserIntroduction = "So sad.";
+            user6.UserDescription = "The talent for being happy is appreciating and liking what you have, instead of what you don't have.";
+
+            ac1 = new Activity();
+            ac1.ActivityId = 0;
+            ac1.ActivityTitle = "Go to 99 Ranch";
+            ac1.Available = 4;
+            ac1.Budget = 5;
+            ac1.LocationDetail = "USC Gate 6";
+            ac1.Owner = "Zheng Li";
+            ac1.Destination = "99 Ranch";
+            ac1.ActivityTime = Convert.ToDateTime("02/15/2015 10:30:00 AM");
+            ac1.Description = "Go shopping to 99 Ranch.";
+
+            ac2 = new Activity();
+            ac2.ActivityId = 1;
+            ac2.ActivityTitle = "Go to see film at Regal";
+            ac2.Available = 2;
+            ac2.Budget = 1;
+            ac2.LocationDetail = "USC Gate 4";
+            ac2.Owner = "Long Chen";
+            ac2.Destination = "Regal";
+            ac2.ActivityTime = Convert.ToDateTime("02/19/2015 07:30:00 PM");
+            ac2.Description = "See film at Regal. Here are two boys, and we want to invite two girls.";
+
+            ac3 = new Activity();
+            ac3.ActivityId = 2;
+            ac3.ActivityTitle = "Diner";
+            ac3.Available = 2;
+            ac3.Budget = 2;
+            ac3.LocationDetail = "USLA";
+            ac3.Owner = "Zheng Li";
+            ac3.Destination = "Santa Monica";
+            ac3.ActivityTime = Convert.ToDateTime("02/8/2015 05:30:00 PM");
+            ac3.Description = "Have an delicious dinner with your friends and also make new friends.";
+
+            ac4 = new Activity();
+            ac4.ActivityId = 3;
+            ac4.ActivityTitle = "Hachathon";
+            ac4.Available = 8;
+            ac4.Budget = 0;
+            ac4.LocationDetail = "USC Gate 6";
+            ac4.Owner = "Zihan Tong";
+            ac4.Destination = "Microsoft";
+            ac4.ActivityTime = Convert.ToDateTime("01/30/2015 05:00:00 PM");
+            ac4.Description = "Develop your own application and learn more things with other friends.";
+
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
